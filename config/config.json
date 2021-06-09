@@ -1,5 +1,5 @@
 {
-  "Tools": ["Reference", "NMF"],
+  "Tools": ["Reference", "NMF", "ATL_Incremental"],
   "Scenarios": [
   {
 	"Name": "scale_samples",
