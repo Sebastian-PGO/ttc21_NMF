@@ -1,0 +1,188 @@
+-- @path LA=/EMFSolutionATL-ATOL/model/laboratoryAutomation.ecore
+-- @path JC=/EMFSolutionATL-ATOL/model/jobCollection.ecore
+module laboratoryAutomation2jobCollection;
+create OUT : JC from IN : LA;
+
+helper def: MAX_SAMPLES_PER_TUBE_RUNNER : Integer = 16;
+
+unique lazy rule JobRequest {
+	from
+		s : LA!JobRequest
+	to
+		t : JC!JobCollection (
+			labware <-	(
+						s.processPlates->collectTo('ProcessPlate2Microplate').t.oclAsType(JC!Labware)
+					)->concat(
+						s.tubes->collectTo('Tubes2TubeRunner').t
+					)->concat(
+						s.assay.reagents->collectTo('Reagent2Trough').t
+					),
+			jobs <- s.assay.steps->collect(step |
+					if step.oclIsKindOf(LA!Wash) or step.oclIsKindOf(LA!Incubate) then
+						s.processPlates->collect(p |
+							thisModule.WashOrIncubate(step, p).t
+						)
+					else -- step.oclIsKindOf(LA!DistributeSample) or step.oclIsKindOf(LA!AddReagent)
+						s.processPlates->collect(e |
+							e.columns->collect(c |
+								Tuple {fst = Sequence {e}, snd = Sequence {c}}
+							)
+						)->collect(p |
+							thisModule.LiquidTransfer(
+								step,
+								p.snd.oclAsType(LA!ProcessColumn),
+								p.fst.oclAsType(LA!ProcessPlate),
+								s
+							).t
+						)
+					endif
+				)
+		)
+}
+
+unique lazy rule Reagent2Trough {
+	from
+		s : LA!Reagent
+	to
+		t : JC!Trough (
+			name <- s.name
+		)
+}
+
+unique lazy rule Tubes2TubeRunner {
+	from
+		s : LA!Tubes
+	to
+		t : JC!TubeRunner (
+			barcodes <- s.samples->collect(e | e.sample.sampleID),
+			name <- s.name
+		)
+}
+
+unique lazy rule ProcessPlate2Microplate {
+	from
+		s : LA!ProcessPlate
+	to
+		t : JC!Microplate (
+			name <- s.name
+		)
+}
+
+unique lazy abstract rule LiquidTransfer {
+	from
+		s : LA!ProtocolStep,
+		p : LA!ProcessColumn,
+		pl : LA!ProcessPlate,
+		jr : LA!JobRequest
+	to
+		t : JC!LiquidTransferJob (
+			protocolStepName <- s.id,
+			target <- thisModule.ProcessPlate2Microplate(pl).t,
+			tips <- p.samples->reject(e |
+					e.sample.isError and t.isPlanned()
+				)->collect(e |
+					thisModule.Tip(s, e, t).t
+				)
+			--TODO: next
+		)
+}
+
+-- Remark:
+--	- MAX_SAMPLES_PER_MICROPLATE/MAX_SAMPLES_PER_TUBE_RUNNER = 96/16 = 6, and 
+--	- MAX_SAMPLES_PER_TUBE_RUNNER/MAX_SAMPLES_PER_MICROPLATE_COLUMN = 16/8 = 2
+-- but the formula below only works because the results of these operations are whole numbers.
+helper context LA!JobRequest def: getTubes(plateIndex : Collection(Integer), columnIndex : Collection(Integer)) : LA!Tubes =
+	self.tubes->at((plateIndex * 6 + columnIndex / 2 + 1).oclAsType(Integer).asOne(0));
+
+unique lazy rule DistributeSample extends LiquidTransfer {
+	from
+		s : LA!DistributeSample,
+		p : LA!ProcessColumn,
+		pl : LA!ProcessPlate,
+		jr : LA!JobRequest
+	to
+		t : JC!LiquidTransferJob (
+			source <- thisModule.Tubes2TubeRunner(jr.getTubes(pl.index, p.column)).t
+		)
+}
+
+unique lazy rule AddReagent extends LiquidTransfer {
+	from
+		s : LA!AddReagent,
+		p : LA!ProcessColumn,
+		pl : LA!ProcessPlate,
+		jr : LA!JobRequest
+	to
+		t : JC!LiquidTransferJob (
+			source <- thisModule.Reagent2Trough(s.reagent).t
+		)
+}
+
+unique lazy abstract rule Tip {
+	from
+		s : LA!ProtocolStep,
+		p : LA!ProcessWell,
+		job : JC!LiquidTransferJob
+	to
+		t : JC!TipLiquidTransfer (
+			status <- p.sample.state.mapState(job),
+			targetCavityIndex <- p.well
+		)
+}
+
+unique lazy rule TipSample extends Tip {
+	from
+		s : LA!DistributeSample,
+		p : LA!ProcessWell,
+		job : JC!LiquidTransferJob
+	to
+		t : JC!TipLiquidTransfer (
+			sourceCavityIndex <- p.well mod thisModule.MAX_SAMPLES_PER_TUBE_RUNNER,
+			volume <- s.volume
+		)
+}
+
+unique lazy rule TipReagent extends Tip {
+	from
+		s : LA!AddReagent,
+		p : LA!ProcessWell,
+		job : JC!LiquidTransferJob
+	to
+		t : JC!TipLiquidTransfer (
+			volume <- s.volume
+		)
+}
+
+unique lazy abstract rule WashOrIncubate {
+	from
+		s : LA!ProtocolStep,
+		p : LA!ProcessPlate
+	to
+		t : JC!Job (
+			protocolStepName <- s.id
+		)
+}
+
+unique lazy rule Incubate extends WashOrIncubate {
+	from
+		s : LA!Incubate,
+		p : LA!ProcessPlate
+	to
+		t : JC!IncubateJob (
+			microplate <- thisModule.ProcessPlate2Microplate(p).t,
+			temperature <- s.temperature,
+			duration <- s.duration
+		)
+}
+
+unique lazy rule Wash extends WashOrIncubate {
+	from
+		s : LA!Wash,
+		p : LA!ProcessPlate
+	to
+		t : JC!WashJob (
+			cavities <- p.columns.samples2.well,
+			microplate <- thisModule.ProcessPlate2Microplate(p).t
+		)
+}
+
