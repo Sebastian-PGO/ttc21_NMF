@@ -1,38 +1,38 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <lab:JobRequest xmi:version="2.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xmi="http://www.omg.org/XMI" xmlns:lab="http://www.transformation-tool-contest.eu/ttc21/laboratoryAutomation">
   <assay name="AbstractElisa">
-    <steps xsi:type="lab:DistributeSample" volume="100" id="AddSample" next="lab:Incubate #//@Assay/@steps.1" />
-    <steps xsi:type="lab:Incubate" temperature="310.15" duration="40" id="BindAntibodies" next="lab:Wash #//@Assay/@steps.2" previous="lab:DistributeSample #//@Assay/@steps.0" />
-    <steps xsi:type="lab:Wash" id="WashAfterAntibodiesBound" next="lab:AddReagent #//@Assay/@steps.3" previous="lab:Incubate #//@Assay/@steps.1" />
-    <steps xsi:type="lab:AddReagent" volume="100" reagent="#//@Assay/@reagents.0" id="AddConjugate" next="lab:Incubate #//@Assay/@steps.4" previous="lab:Wash #//@Assay/@steps.2" />
-    <steps xsi:type="lab:Incubate" temperature="310.15" duration="40" id="BindConjugate" next="lab:Wash #//@Assay/@steps.5" previous="lab:AddReagent #//@Assay/@steps.3" />
-    <steps xsi:type="lab:Wash" id="WashConjugate" next="lab:AddReagent #//@Assay/@steps.6" previous="lab:Incubate #//@Assay/@steps.4" />
-    <steps xsi:type="lab:AddReagent" volume="100" reagent="#//@Assay/@reagents.1" id="AddSubstrate" next="lab:Incubate #//@Assay/@steps.7" previous="lab:Wash #//@Assay/@steps.5" />
-    <steps xsi:type="lab:Incubate" temperature="293.15" duration="20" id="WaitForColorReaction" next="lab:DistributeSample #//@Assay/@steps.8" previous="lab:AddReagent #//@Assay/@steps.6" />
-    <steps xsi:type="lab:DistributeSample" volume="100" id="AddSample2" next="lab:Incubate #//@Assay/@steps.9" previous="lab:Incubate #//@Assay/@steps.7" />
-    <steps xsi:type="lab:Incubate" temperature="310.15" duration="40" id="BindAntibodies2" next="lab:Wash #//@Assay/@steps.10" previous="lab:DistributeSample #//@Assay/@steps.8" />
-    <steps xsi:type="lab:Wash" id="WashAfterAntibodiesBound2" next="lab:AddReagent #//@Assay/@steps.11" previous="lab:Incubate #//@Assay/@steps.9" />
-    <steps xsi:type="lab:AddReagent" volume="100" reagent="#//@Assay/@reagents.0" id="AddConjugate2" next="lab:Incubate #//@Assay/@steps.12" previous="lab:Wash #//@Assay/@steps.10" />
-    <steps xsi:type="lab:Incubate" temperature="310.15" duration="40" id="BindConjugate2" next="lab:Wash #//@Assay/@steps.13" previous="lab:AddReagent #//@Assay/@steps.11" />
-    <steps xsi:type="lab:Wash" id="WashConjugate2" next="lab:AddReagent #//@Assay/@steps.14" previous="lab:Incubate #//@Assay/@steps.12" />
-    <steps xsi:type="lab:AddReagent" volume="100" reagent="#//@Assay/@reagents.1" id="AddSubstrate2" next="lab:Incubate #//@Assay/@steps.15" previous="lab:Wash #//@Assay/@steps.13" />
-    <steps xsi:type="lab:Incubate" temperature="293.15" duration="20" id="WaitForColorReaction2" next="lab:DistributeSample #//@Assay/@steps.16" previous="lab:AddReagent #//@Assay/@steps.14" />
-    <steps xsi:type="lab:DistributeSample" volume="100" id="AddSample3" next="lab:Incubate #//@Assay/@steps.17" previous="lab:Incubate #//@Assay/@steps.15" />
-    <steps xsi:type="lab:Incubate" temperature="310.15" duration="40" id="BindAntibodies3" next="lab:Wash #//@Assay/@steps.18" previous="lab:DistributeSample #//@Assay/@steps.16" />
-    <steps xsi:type="lab:Wash" id="WashAfterAntibodiesBound3" next="lab:AddReagent #//@Assay/@steps.19" previous="lab:Incubate #//@Assay/@steps.17" />
-    <steps xsi:type="lab:AddReagent" volume="100" reagent="#//@Assay/@reagents.0" id="AddConjugate3" next="lab:Incubate #//@Assay/@steps.20" previous="lab:Wash #//@Assay/@steps.18" />
-    <steps xsi:type="lab:Incubate" temperature="310.15" duration="40" id="BindConjugate3" next="lab:Wash #//@Assay/@steps.21" previous="lab:AddReagent #//@Assay/@steps.19" />
-    <steps xsi:type="lab:Wash" id="WashConjugate3" next="lab:AddReagent #//@Assay/@steps.22" previous="lab:Incubate #//@Assay/@steps.20" />
-    <steps xsi:type="lab:AddReagent" volume="100" reagent="#//@Assay/@reagents.1" id="AddSubstrate3" next="lab:Incubate #//@Assay/@steps.23" previous="lab:Wash #//@Assay/@steps.21" />
-    <steps xsi:type="lab:Incubate" temperature="293.15" duration="20" id="WaitForColorReaction3" next="lab:DistributeSample #//@Assay/@steps.24" previous="lab:AddReagent #//@Assay/@steps.22" />
-    <steps xsi:type="lab:DistributeSample" volume="100" id="AddSample4" next="lab:Incubate #//@Assay/@steps.25" previous="lab:Incubate #//@Assay/@steps.23" />
-    <steps xsi:type="lab:Incubate" temperature="310.15" duration="40" id="BindAntibodies4" next="lab:Wash #//@Assay/@steps.26" previous="lab:DistributeSample #//@Assay/@steps.24" />
-    <steps xsi:type="lab:Wash" id="WashAfterAntibodiesBound4" next="lab:AddReagent #//@Assay/@steps.27" previous="lab:Incubate #//@Assay/@steps.25" />
-    <steps xsi:type="lab:AddReagent" volume="100" reagent="#//@Assay/@reagents.0" id="AddConjugate4" next="lab:Incubate #//@Assay/@steps.28" previous="lab:Wash #//@Assay/@steps.26" />
-    <steps xsi:type="lab:Incubate" temperature="310.15" duration="40" id="BindConjugate4" next="lab:Wash #//@Assay/@steps.29" previous="lab:AddReagent #//@Assay/@steps.27" />
-    <steps xsi:type="lab:Wash" id="WashConjugate4" next="lab:AddReagent #//@Assay/@steps.30" previous="lab:Incubate #//@Assay/@steps.28" />
-    <steps xsi:type="lab:AddReagent" volume="100" reagent="#//@Assay/@reagents.1" id="AddSubstrate4" next="lab:Incubate #//@Assay/@steps.31" previous="lab:Wash #//@Assay/@steps.29" />
-    <steps xsi:type="lab:Incubate" temperature="293.15" duration="20" id="WaitForColorReaction4" previous="lab:AddReagent #//@Assay/@steps.30" />
+    <steps xsi:type="lab:DistributeSample" volume="100" id="AddSample" next="lab:Incubate #//@assay/@steps.1" />
+    <steps xsi:type="lab:Incubate" temperature="310.15" duration="40" id="BindAntibodies" next="lab:Wash #//@assay/@steps.2" previous="lab:DistributeSample #//@assay/@steps.0" />
+    <steps xsi:type="lab:Wash" id="WashAfterAntibodiesBound" next="lab:AddReagent #//@assay/@steps.3" previous="lab:Incubate #//@assay/@steps.1" />
+    <steps xsi:type="lab:AddReagent" volume="100" reagent="#//@assay/@reagents.0" id="AddConjugate" next="lab:Incubate #//@assay/@steps.4" previous="lab:Wash #//@assay/@steps.2" />
+    <steps xsi:type="lab:Incubate" temperature="310.15" duration="40" id="BindConjugate" next="lab:Wash #//@assay/@steps.5" previous="lab:AddReagent #//@assay/@steps.3" />
+    <steps xsi:type="lab:Wash" id="WashConjugate" next="lab:AddReagent #//@assay/@steps.6" previous="lab:Incubate #//@assay/@steps.4" />
+    <steps xsi:type="lab:AddReagent" volume="100" reagent="#//@assay/@reagents.1" id="AddSubstrate" next="lab:Incubate #//@assay/@steps.7" previous="lab:Wash #//@assay/@steps.5" />
+    <steps xsi:type="lab:Incubate" temperature="293.15" duration="20" id="WaitForColorReaction" next="lab:DistributeSample #//@assay/@steps.8" previous="lab:AddReagent #//@assay/@steps.6" />
+    <steps xsi:type="lab:DistributeSample" volume="100" id="AddSample2" next="lab:Incubate #//@assay/@steps.9" previous="lab:Incubate #//@assay/@steps.7" />
+    <steps xsi:type="lab:Incubate" temperature="310.15" duration="40" id="BindAntibodies2" next="lab:Wash #//@assay/@steps.10" previous="lab:DistributeSample #//@assay/@steps.8" />
+    <steps xsi:type="lab:Wash" id="WashAfterAntibodiesBound2" next="lab:AddReagent #//@assay/@steps.11" previous="lab:Incubate #//@assay/@steps.9" />
+    <steps xsi:type="lab:AddReagent" volume="100" reagent="#//@assay/@reagents.0" id="AddConjugate2" next="lab:Incubate #//@assay/@steps.12" previous="lab:Wash #//@assay/@steps.10" />
+    <steps xsi:type="lab:Incubate" temperature="310.15" duration="40" id="BindConjugate2" next="lab:Wash #//@assay/@steps.13" previous="lab:AddReagent #//@assay/@steps.11" />
+    <steps xsi:type="lab:Wash" id="WashConjugate2" next="lab:AddReagent #//@assay/@steps.14" previous="lab:Incubate #//@assay/@steps.12" />
+    <steps xsi:type="lab:AddReagent" volume="100" reagent="#//@assay/@reagents.1" id="AddSubstrate2" next="lab:Incubate #//@assay/@steps.15" previous="lab:Wash #//@assay/@steps.13" />
+    <steps xsi:type="lab:Incubate" temperature="293.15" duration="20" id="WaitForColorReaction2" next="lab:DistributeSample #//@assay/@steps.16" previous="lab:AddReagent #//@assay/@steps.14" />
+    <steps xsi:type="lab:DistributeSample" volume="100" id="AddSample3" next="lab:Incubate #//@assay/@steps.17" previous="lab:Incubate #//@assay/@steps.15" />
+    <steps xsi:type="lab:Incubate" temperature="310.15" duration="40" id="BindAntibodies3" next="lab:Wash #//@assay/@steps.18" previous="lab:DistributeSample #//@assay/@steps.16" />
+    <steps xsi:type="lab:Wash" id="WashAfterAntibodiesBound3" next="lab:AddReagent #//@assay/@steps.19" previous="lab:Incubate #//@assay/@steps.17" />
+    <steps xsi:type="lab:AddReagent" volume="100" reagent="#//@assay/@reagents.0" id="AddConjugate3" next="lab:Incubate #//@assay/@steps.20" previous="lab:Wash #//@assay/@steps.18" />
+    <steps xsi:type="lab:Incubate" temperature="310.15" duration="40" id="BindConjugate3" next="lab:Wash #//@assay/@steps.21" previous="lab:AddReagent #//@assay/@steps.19" />
+    <steps xsi:type="lab:Wash" id="WashConjugate3" next="lab:AddReagent #//@assay/@steps.22" previous="lab:Incubate #//@assay/@steps.20" />
+    <steps xsi:type="lab:AddReagent" volume="100" reagent="#//@assay/@reagents.1" id="AddSubstrate3" next="lab:Incubate #//@assay/@steps.23" previous="lab:Wash #//@assay/@steps.21" />
+    <steps xsi:type="lab:Incubate" temperature="293.15" duration="20" id="WaitForColorReaction3" next="lab:DistributeSample #//@assay/@steps.24" previous="lab:AddReagent #//@assay/@steps.22" />
+    <steps xsi:type="lab:DistributeSample" volume="100" id="AddSample4" next="lab:Incubate #//@assay/@steps.25" previous="lab:Incubate #//@assay/@steps.23" />
+    <steps xsi:type="lab:Incubate" temperature="310.15" duration="40" id="BindAntibodies4" next="lab:Wash #//@assay/@steps.26" previous="lab:DistributeSample #//@assay/@steps.24" />
+    <steps xsi:type="lab:Wash" id="WashAfterAntibodiesBound4" next="lab:AddReagent #//@assay/@steps.27" previous="lab:Incubate #//@assay/@steps.25" />
+    <steps xsi:type="lab:AddReagent" volume="100" reagent="#//@assay/@reagents.0" id="AddConjugate4" next="lab:Incubate #//@assay/@steps.28" previous="lab:Wash #//@assay/@steps.26" />
+    <steps xsi:type="lab:Incubate" temperature="310.15" duration="40" id="BindConjugate4" next="lab:Wash #//@assay/@steps.29" previous="lab:AddReagent #//@assay/@steps.27" />
+    <steps xsi:type="lab:Wash" id="WashConjugate4" next="lab:AddReagent #//@assay/@steps.30" previous="lab:Incubate #//@assay/@steps.28" />
+    <steps xsi:type="lab:AddReagent" volume="100" reagent="#//@assay/@reagents.1" id="AddSubstrate4" next="lab:Incubate #//@assay/@steps.31" previous="lab:Wash #//@assay/@steps.29" />
+    <steps xsi:type="lab:Incubate" temperature="293.15" duration="20" id="WaitForColorReaction4" previous="lab:AddReagent #//@assay/@steps.30" />
     <reagents name="Conjugate" />
     <reagents name="Substrate" />
   </assay>
