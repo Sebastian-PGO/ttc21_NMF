@@ -13,6 +13,7 @@ The `docs/2021_TTC_LabAutomation.pdf` file contains the [case description](https
 ## Solution Prerequisites
 
 * Reference: You need to install [.NET Core 3.1](https://dotnet.microsoft.com/download/dotnet/3.1)
+* ATL_Incremental: You need to install a Java Runtime Environment (JRE) >= 8 & <= 11 (tested on 1.8)
 
 Add your prerequisites here!
 
