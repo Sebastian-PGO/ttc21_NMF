@@ -89,6 +89,11 @@ class LiveContestDriver {
         Model = System.getenv("Model")
         ModelPath = System.getenv("ModelPath")
 
+        // alter model path if running in container
+        if (System.getenv("RUNS_IN_CONTAINER") !== null) {
+            ModelPath = '/app/' + ModelPath.split('/').dropWhile[it != 'models'].join('/')
+        }
+
         solution = new ATOLSolution
 
         stopwatch = System.nanoTime - stopwatch
