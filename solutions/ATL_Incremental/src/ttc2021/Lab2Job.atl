@@ -5,6 +5,26 @@ create OUT : JC from IN : LA;
 
 helper def: MAX_SAMPLES_PER_TUBE_RUNNER : Integer = 16;
 
+helper context LA!ProtocolStep def: jobs(jr : LA!JobRequest) : JC!Job =
+	if self.oclIsKindOf(LA!Wash) or self.oclIsKindOf(LA!Incubate) then
+		jr.processPlates->collect(p |
+			thisModule.WashOrIncubate(self, p, jr).t
+		)
+	else -- self.oclIsKindOf(LA!DistributeSample) or self.oclIsKindOf(LA!AddReagent)
+		jr.processPlates->collect(e |
+			e.columns->collect(c |
+				Tuple {fst = Sequence {e}, snd = Sequence {c}}
+			)
+		)->collect(p |
+			thisModule.LiquidTransfer(
+				self,
+				p.snd.oclAsType(LA!ProcessColumn),
+				p.fst.oclAsType(LA!ProcessPlate),
+				jr
+			).t
+		)
+	endif;
+	
 unique lazy rule JobRequest {
 	from
 		s : LA!JobRequest
@@ -18,24 +38,7 @@ unique lazy rule JobRequest {
 						s.assay.reagents->collectTo('Reagent2Trough').t
 					),
 			jobs <- s.assay.steps->collect(step |
-					if step.oclIsKindOf(LA!Wash) or step.oclIsKindOf(LA!Incubate) then
-						s.processPlates->collect(p |
-							thisModule.WashOrIncubate(step, p).t
-						)
-					else -- step.oclIsKindOf(LA!DistributeSample) or step.oclIsKindOf(LA!AddReagent)
-						s.processPlates->collect(e |
-							e.columns->collect(c |
-								Tuple {fst = Sequence {e}, snd = Sequence {c}}
-							)
-						)->collect(p |
-							thisModule.LiquidTransfer(
-								step,
-								p.snd.oclAsType(LA!ProcessColumn),
-								p.fst.oclAsType(LA!ProcessPlate),
-								s
-							).t
-						)
-					endif
+					step.jobs(s)
 				)
 		)
 }
@@ -82,8 +85,8 @@ unique lazy abstract rule LiquidTransfer {
 					e.sample.isError and t.isPlanned()
 				)->collect(e |
 					thisModule.Tip(s, e, t).t
-				)
-			--TODO: next
+				),
+			next <- s.next->collect(step | step.jobs(jr))
 		)
 }
 
@@ -156,17 +159,20 @@ unique lazy rule TipReagent extends Tip {
 unique lazy abstract rule WashOrIncubate {
 	from
 		s : LA!ProtocolStep,
-		p : LA!ProcessPlate
+		p : LA!ProcessPlate,
+		jr : LA!JobRequest
 	to
 		t : JC!Job (
-			protocolStepName <- s.id
+			protocolStepName <- s.id,
+			next <- s.next->collect(step | step.jobs(jr))
 		)
 }
 
 unique lazy rule Incubate extends WashOrIncubate {
 	from
 		s : LA!Incubate,
-		p : LA!ProcessPlate
+		p : LA!ProcessPlate,
+		jr : LA!JobRequest
 	to
 		t : JC!IncubateJob (
 			microplate <- thisModule.ProcessPlate2Microplate(p).t,
@@ -178,7 +184,8 @@ unique lazy rule Incubate extends WashOrIncubate {
 unique lazy rule Wash extends WashOrIncubate {
 	from
 		s : LA!Wash,
-		p : LA!ProcessPlate
+		p : LA!ProcessPlate,
+		jr : LA!JobRequest
 	to
 		t : JC!WashJob (
 			cavities <- p.columns.samples2.well,
