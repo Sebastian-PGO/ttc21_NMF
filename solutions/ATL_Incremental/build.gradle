@@ -1,0 +1,63 @@
+plugins {
+	id 'org.xtext.xtend' version '2.0.8'
+	id 'com.github.johnrengelman.shadow' version '6.1.0'
+	id 'eclipse'
+	id 'application'
+}
+
+xtext.version = "2.17.0"
+
+repositories {
+	jcenter()
+	mavenCentral()
+
+	// for ATL
+	maven { url "https://repo.eclipse.org/content/groups/releases/" }
+
+	flatDir {
+		dirs	'libs'				// for atol.jar, aof.jar
+	}
+}
+
+
+dependencies {
+	implementation group: 'org.eclipse.xtend', name: 'org.eclipse.xtend.lib', version: '2.25.0'
+	implementation group: 'org.eclipse.emf', name: 'org.eclipse.emf.ecore', version: '2.23.0'
+	implementation group: 'org.eclipse.emf', name: 'org.eclipse.emf.ecore.xmi', version: '2.16.0'
+	implementation group: 'org.eclipse.m2m.atl', name: 'org.eclipse.m2m.atl.emftvm.compiler', version: '4.3.0'
+	implementation name: 'atol'
+	implementation name: 'models'
+}
+
+
+
+xtend {
+	sourceSets {
+		main.xtendOutputDir = 'xtend-gen'
+	}
+}
+
+mainClassName = 'ttc2021.LiveContestDriver'
+
+
+sourceSets {
+	main {
+		java {
+			srcDirs = ['src', 'src-gen']
+		}
+		resources {
+			srcDirs = ['src']
+		}
+	}
+}
+
+sourceSets {
+	main {
+		output.resourcesDir = "build/classes/main"
+	}
+	test {
+		output.resourcesDir = "build/classes/test"
+	}
+}
+
+

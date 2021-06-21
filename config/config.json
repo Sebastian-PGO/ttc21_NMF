@@ -1,5 +1,5 @@
 {
-  "Tools": ["ttc2021_iworkflows_YAMTL"],
+  "Tools": ["Reference", "NMF", "ATL_Incremental", "ttc2021_iworkflows_YAMTL"],
   "Scenarios": [
   {
 	"Name": "test",

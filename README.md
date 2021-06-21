@@ -13,8 +13,7 @@ The `docs/2021_TTC_LabAutomation.pdf` file contains the [case description](https
 ## Solution Prerequisites
 
 * Reference: You need to install [.NET Core 3.1](https://dotnet.microsoft.com/download/dotnet/3.1)
-
-Add your prerequisites here!
+* ATL_Incremental: You need to install [docker](https://docs.docker.com/engine/install/) and [docker-compose](https://github.com/docker/compose). If your user is not in the docker group add `sudo` before `docker-compose` commands in [solution.ini](solutions/ATL_Incremental/solution.ini).
 
 ## Using the framework
 

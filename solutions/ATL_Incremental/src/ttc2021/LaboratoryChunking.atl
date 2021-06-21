@@ -1,0 +1,82 @@
+module LaboratoryChunking;
+create OUT : LA refining IN : LA;
+
+helper def: MAX_SAMPLES_PER_TUBE_RUNNER		: Integer = 16;
+helper def: MAX_SAMPLES_PER_MICROPLATE_COLUMN	: Integer = 8;
+helper def: MAX_COLUMNS_PER_MICROPLATE		: Integer = 12;
+helper def: MAX_SAMPLES_PER_MICROPLATE		: Integer = thisModule.MAX_SAMPLES_PER_MICROPLATE_COLUMN * thisModule.MAX_COLUMNS_PER_MICROPLATE;
+
+rule JobRequest {
+	from
+		s : LA!JobRequest
+	to
+		t : LA!JobRequest (
+			tubes <- s.samples.chunksOf(thisModule.MAX_SAMPLES_PER_TUBE_RUNNER)->collectTo('Tubes').t,
+			processPlates <- s.samples.chunksOf(thisModule.MAX_SAMPLES_PER_MICROPLATE_COLUMN)->collectTo('ProcessColumn').t
+						.chunksOf(thisModule.MAX_COLUMNS_PER_MICROPLATE)->collectTo('ProcessPlate').t
+		)
+}
+
+unique lazy rule ProcessPlate {
+	from
+		s :	TupleType(
+				samps :	Collection(TupleType(
+						samp	: LA!ProcessColumn,
+						index	: Integer
+					)),
+				index:Integer
+			)
+	to
+		t : LA!ProcessPlate (
+			name <- 'Plate' + (s.index + 1).pad,
+			columns <- s.samps->collect(e | e.samp),
+			index <- s.index
+		)
+}
+
+unique lazy rule ProcessColumn {
+	from
+		s :	TupleType(
+				samps :	Collection(TupleType(
+						samp	: LA!Sample,
+						index	: Integer
+					)),
+				index:Integer
+			)
+	to
+		t : LA!ProcessColumn (
+			column <- s.index,
+			samples <- s.samps->collect(e | thisModule.ProcessWell(e, thisModule.MAX_SAMPLES_PER_MICROPLATE)).t
+		)
+}
+
+unique lazy rule Tubes {
+	from
+		s :	TupleType(
+				samps :	Collection(TupleType(
+						samp	: LA!Sample,
+						index	: Integer
+					)),
+				index:Integer
+			)
+	to
+		t : LA!Tubes (
+			name <- 'TubeRunner' + (s.index + 1).pad,
+			samples <- s.samps->collect(e | thisModule.ProcessWell(e, thisModule.MAX_SAMPLES_PER_TUBE_RUNNER)).t
+		)
+}
+
+unique lazy rule ProcessWell {
+	from
+		s :	TupleType(
+				samp:LA!Sample,
+				index:Integer
+			),
+		v : Integer
+	to
+		t : LA!ProcessWell (
+			well <- s.index mod v,
+			sample <- s.samp
+		)
+}
+

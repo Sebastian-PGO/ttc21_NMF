@@ -69,8 +69,8 @@ def benchmark(conf):
                         output = subprocess.check_output(config.get('run', 'default'), shell=True)
                         with open(result_file, "ab") as file:
                             file.write(output)
-                            # output = subprocess.check_output("dotnet ../Reference/bin/netcoreapp3.1/NMFSolution.dll check")
-                            # file.write(output)
+                            output = subprocess.check_output(["dotnet", "../Reference/bin/netcoreapp3.1/NMFSolution.dll", "check"])
+                            file.write(output)
                     except CalledProcessError as e:
                         print("Program exited with error" + repr(e))
 
