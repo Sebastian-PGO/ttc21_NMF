@@ -69,8 +69,6 @@ def benchmark(conf):
                         output = subprocess.check_output(config.get('run', 'default'), shell=True)
                         with open(result_file, "ab") as file:
                             file.write(output)
-                            output = subprocess.check_output(["dotnet", "../Reference/bin/netcoreapp3.1/NMFSolution.dll", "check"])
-                            file.write(output)
                     except CalledProcessError as e:
                         print("Program exited with error" + repr(e))
 
@@ -97,7 +95,7 @@ def _visualize(scenario, times, metric, unit, scale):
         print("Printing diagram for scenario = " + scenario + ", phase = " + phase)
         phasedata = values[values.PhaseName==phase]
         results = pd.pivot_table(phasedata, values='Values', index=['Model'],columns=['Tool'])
-        plot = results.plot(logx=True,xticks=sizes)
+        plot = results.plot(loglog=True,xticks=sizes)
         plot.get_xaxis().set_major_formatter(ScalarFormatter())
         plot.get_xaxis().set_tick_params(which='minor', size=0)
         plot.get_xaxis().set_tick_params(which='minor', width=0)
@@ -105,7 +103,7 @@ def _visualize(scenario, times, metric, unit, scale):
         if unit is not None:
             label = label + " [" + unit + "]"
         plot.set_ylabel(label)
-        plt.savefig(scenario + "_" + phase + ".pdf")
+        plt.savefig(scenario + "_" + phase + "_" + metric + ".pdf")
 
 def visualize(conf):
     """
@@ -116,9 +114,12 @@ def visualize(conf):
     import pandas as pd
     data = pd.read_csv(os.path.join(BASE_DIRECTORY, 'output', 'output.csv'), sep=';')
     times = data[data.MetricName=='Time']
+    memory = data[data.MetricName=='Memory']
     for scenario in conf.Scenarios:
         timesForScenario = times[times.Scenario==scenario.Name]
+        memoryForScenario = memory[memory.Scenario==scenario.Name]
         _visualize(scenario.Name, timesForScenario, 'Time', 'ms', 0.000001)
+        _visualize(scenario.Name, memoryForScenario, 'Memory', 'MB', 0.000001)
 
 
 if __name__ == "__main__":

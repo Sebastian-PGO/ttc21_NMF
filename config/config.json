@@ -2,12 +2,6 @@
   "Tools": ["Reference", "NMF", "ATL_Incremental", "ttc2021_iworkflows_YAMTL"],
   "Scenarios": [
   {
-	"Name": "test",
-	"Models": [
-	  "minimal"
-	]
-  },
-  {
 	"Name": "scale_samples",
 	"Models": [
 	  "1",
@@ -48,6 +42,6 @@
 	]
   }],
   "Sequences": 20,
-  "Runs": 1,
+  "Runs": 10,
   "Timeout": 6000
 }
