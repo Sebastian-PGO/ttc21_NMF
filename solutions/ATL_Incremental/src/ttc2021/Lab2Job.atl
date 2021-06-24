@@ -5,13 +5,25 @@ create OUT : JC from IN : LA;
 
 helper def: MAX_SAMPLES_PER_TUBE_RUNNER : Integer = 16;
 
-helper context LA!ProtocolStep def: jobs(jr : LA!JobRequest) : JC!Job =
+helper context LA!ProtocolStep def: jobs(jr : LA!JobRequest, pl : LA!ProcessPlate) : JC!Job =
 	if self.oclIsKindOf(LA!Wash) or self.oclIsKindOf(LA!Incubate) then
-		jr.processPlates->collect(p |
+		jr.processPlates->select(e |
+			if pl.oclIsUndefined() then
+				true
+			else
+				pl = e
+			endif
+		)->collect(p |
 			thisModule.WashOrIncubate(self, p, jr).t
 		)
 	else -- self.oclIsKindOf(LA!DistributeSample) or self.oclIsKindOf(LA!AddReagent)
-		jr.processPlates->collect(e |
+		jr.processPlates->select(e |
+			if pl.oclIsUndefined() then
+				true
+			else
+				pl = e
+			endif
+		)->collect(e |
 			e.columns->collect(c |
 				Tuple {fst = Sequence {e}, snd = Sequence {c}}
 			)
@@ -38,7 +50,7 @@ unique lazy rule JobRequest {
 						s.assay.reagents->collectTo('Reagent2Trough').t
 					),
 			jobs <- s.assay.steps->collect(step |
-					step.jobs(s)
+					step.jobs(s, OclUndefined)
 				)
 		)
 }
@@ -86,7 +98,7 @@ unique lazy abstract rule LiquidTransfer {
 				)->collect(e |
 					thisModule.Tip(s, e, t).t
 				),
-			next <- s.next->collect(step | step.jobs(jr))
+			next <- s.next->collect(step | step.jobs(jr, pl))
 		)
 }
 
@@ -164,7 +176,7 @@ unique lazy abstract rule WashOrIncubate {
 	to
 		t : JC!Job (
 			protocolStepName <- s.id,
-			next <- s.next->collect(step | step.jobs(jr))
+			next <- s.next->collect(step | step.jobs(jr, p))
 		)
 }
 
