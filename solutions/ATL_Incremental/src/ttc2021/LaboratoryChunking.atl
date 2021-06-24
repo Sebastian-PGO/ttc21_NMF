@@ -45,7 +45,7 @@ unique lazy rule ProcessColumn {
 			)
 	to
 		t : LA!ProcessColumn (
-			column <- s.index,
+			column <- s.index mod thisModule.MAX_COLUMNS_PER_MICROPLATE,
 			samples <- s.samps->collect(e | thisModule.ProcessWell(e, thisModule.MAX_SAMPLES_PER_MICROPLATE)).t
 		)
 }
