@@ -1,5 +1,15 @@
 {
-  "Tools": ["Reference", "NMF"],
+  "Tools": [
+  	"Reference",
+  	"NMF",
+  	"NMF_DisabledTieredPGO",
+  	"NMF_MaxTypeChecks0",
+  	"NMF_MaxTypeChecks1",
+  	"NMF_MaxTypeChecks2",
+  	"NMF_MaxTypeChecks3",
+  	"NMF_MaxTypeChecks4",
+  	"NMF_MaxTypeChecks5"
+  ],
   "Scenarios": [
   {
 	"Name": "scale_samples",
