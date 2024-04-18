@@ -1,0 +1,19 @@
+{
+  "version": 2,
+  "dgSpecHash": "AdsP1tfJkI+MQNYomva5LPgsk2XW8VklUzJttKhcRDI0DIymgL5rKFutanOgDJOIw/txb1+L1JJEFXpQnmTuXQ==",
+  "success": true,
+  "projectFilePath": "/home/sebasatian/Repos/ttc21_NMF/solutions/Reference/Reference.csproj",
+  "expectedPackageFiles": [
+    "/home/sebasatian/.nuget/packages/commandlineparser/2.8.0/commandlineparser.2.8.0.nupkg.sha512",
+    "/home/sebasatian/.nuget/packages/nmf-basics/2.0.176/nmf-basics.2.0.176.nupkg.sha512",
+    "/home/sebasatian/.nuget/packages/nmf-collections/2.0.176/nmf-collections.2.0.176.nupkg.sha512",
+    "/home/sebasatian/.nuget/packages/nmf-expressions/2.0.176/nmf-expressions.2.0.176.nupkg.sha512",
+    "/home/sebasatian/.nuget/packages/nmf-expressions-chunk/2.0.176/nmf-expressions-chunk.2.0.176.nupkg.sha512",
+    "/home/sebasatian/.nuget/packages/nmf-expressions-utilities/2.0.176/nmf-expressions-utilities.2.0.176.nupkg.sha512",
+    "/home/sebasatian/.nuget/packages/nmf-repository/2.0.176/nmf-repository.2.0.176.nupkg.sha512",
+    "/home/sebasatian/.nuget/packages/nmf-synchronizations/2.0.176/nmf-synchronizations.2.0.176.nupkg.sha512",
+    "/home/sebasatian/.nuget/packages/nmf-transformations/2.0.176/nmf-transformations.2.0.176.nupkg.sha512",
+    "/home/sebasatian/.nuget/packages/nmf-utilities/2.0.176/nmf-utilities.2.0.176.nupkg.sha512"
+  ],
+  "logs": []
+}

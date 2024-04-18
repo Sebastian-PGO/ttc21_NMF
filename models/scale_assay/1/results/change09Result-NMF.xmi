@@ -1,0 +1,370 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<jobs:JobCollection xmi:version="2.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xmi="http://www.omg.org/XMI" xmlns:jobs="http://www.transformation-tool-contest.eu/ttc21/jobCollection">
+  <labware xsi:type="jobs:Trough" name="Conjugate" />
+  <labware xsi:type="jobs:Trough" name="Substrate" />
+  <labware xsi:type="jobs:Microplate" name="Plate01" />
+  <labware xsi:type="jobs:TubeRunner" barcodes="Sample0001 Sample0002 Sample0003 Sample0004 Sample0005 Sample0006 Sample0007 Sample0008 Sample0009 Sample0010 Sample0011 Sample0012 Sample0013 Sample0014 Sample0015 Sample0016" name="Tube01" />
+  <labware xsi:type="jobs:TubeRunner" barcodes="Sample0017 Sample0018 Sample0019 Sample0020 Sample0021 Sample0022 Sample0023 Sample0024 Sample0025 Sample0026 Sample0027 Sample0028 Sample0029 Sample0030 Sample0031 Sample0032" name="Tube02" />
+  <labware xsi:type="jobs:TubeRunner" barcodes="Sample0033 Sample0034 Sample0035 Sample0036 Sample0037 Sample0038 Sample0039 Sample0040 Sample0041 Sample0042 Sample0043 Sample0044 Sample0045 Sample0046 Sample0047 Sample0048" name="Tube03" />
+  <labware xsi:type="jobs:TubeRunner" barcodes="Sample0049 Sample0050 Sample0051 Sample0052 Sample0053 Sample0054 Sample0055 Sample0056 Sample0057 Sample0058 Sample0059 Sample0060 Sample0061 Sample0062 Sample0063 Sample0064" name="Tube04" />
+  <labware xsi:type="jobs:TubeRunner" barcodes="Sample0065 Sample0066 Sample0067 Sample0068 Sample0069 Sample0070 Sample0071 Sample0072 Sample0073 Sample0074 Sample0075 Sample0076 Sample0077 Sample0078 Sample0079 Sample0080" name="Tube05" />
+  <labware xsi:type="jobs:TubeRunner" barcodes="Sample0081 Sample0082 Sample0083 Sample0084 Sample0085 Sample0086 Sample0087 Sample0088 Sample0089 Sample0090 Sample0091 Sample0092 Sample0093 Sample0094 Sample0095 Sample0096" name="Tube06" />
+  <jobs xsi:type="jobs:LiquidTransferJob" target="jobs:Microplate #//@labware.2" source="jobs:TubeRunner #//@labware.3" state="Succeeded" protocolStepName="AddSample" next="#//@jobs.12">
+    <tips volume="100" status="Succeeded" />
+    <tips sourceCavityIndex="1" volume="100" targetCavityIndex="1" status="Succeeded" />
+    <tips sourceCavityIndex="2" volume="100" targetCavityIndex="2" status="Succeeded" />
+    <tips sourceCavityIndex="3" volume="100" targetCavityIndex="3" status="Succeeded" />
+    <tips sourceCavityIndex="4" volume="100" targetCavityIndex="4" status="Succeeded" />
+    <tips sourceCavityIndex="5" volume="100" targetCavityIndex="5" status="Succeeded" />
+    <tips sourceCavityIndex="6" volume="100" targetCavityIndex="6" status="Succeeded" />
+    <tips sourceCavityIndex="7" volume="100" targetCavityIndex="7" status="Succeeded" />
+  </jobs>
+  <jobs xsi:type="jobs:LiquidTransferJob" target="jobs:Microplate #//@labware.2" source="jobs:TubeRunner #//@labware.3" state="Succeeded" protocolStepName="AddSample" next="#//@jobs.12">
+    <tips sourceCavityIndex="8" volume="100" targetCavityIndex="8" status="Succeeded" />
+    <tips sourceCavityIndex="9" volume="100" targetCavityIndex="9" status="Succeeded" />
+    <tips sourceCavityIndex="10" volume="100" targetCavityIndex="10" status="Succeeded" />
+    <tips sourceCavityIndex="11" volume="100" targetCavityIndex="11" status="Succeeded" />
+    <tips sourceCavityIndex="12" volume="100" targetCavityIndex="12" status="Succeeded" />
+    <tips sourceCavityIndex="13" volume="100" targetCavityIndex="13" status="Succeeded" />
+    <tips sourceCavityIndex="14" volume="100" targetCavityIndex="14" status="Succeeded" />
+    <tips sourceCavityIndex="15" volume="100" targetCavityIndex="15" status="Succeeded" />
+  </jobs>
+  <jobs xsi:type="jobs:LiquidTransferJob" target="jobs:Microplate #//@labware.2" source="jobs:TubeRunner #//@labware.4" state="Succeeded" protocolStepName="AddSample" next="#//@jobs.12">
+    <tips volume="100" targetCavityIndex="16" status="Succeeded" />
+    <tips sourceCavityIndex="1" volume="100" targetCavityIndex="17" status="Succeeded" />
+    <tips sourceCavityIndex="2" volume="100" targetCavityIndex="18" status="Succeeded" />
+    <tips sourceCavityIndex="3" volume="100" targetCavityIndex="19" status="Succeeded" />
+    <tips sourceCavityIndex="4" volume="100" targetCavityIndex="20" status="Succeeded" />
+    <tips sourceCavityIndex="5" volume="100" targetCavityIndex="21" status="Succeeded" />
+    <tips sourceCavityIndex="6" volume="100" targetCavityIndex="22" status="Succeeded" />
+    <tips sourceCavityIndex="7" volume="100" targetCavityIndex="23" status="Succeeded" />
+  </jobs>
+  <jobs xsi:type="jobs:LiquidTransferJob" target="jobs:Microplate #//@labware.2" source="jobs:TubeRunner #//@labware.4" state="Succeeded" protocolStepName="AddSample" next="#//@jobs.12">
+    <tips sourceCavityIndex="8" volume="100" targetCavityIndex="24" status="Succeeded" />
+    <tips sourceCavityIndex="9" volume="100" targetCavityIndex="25" status="Succeeded" />
+    <tips sourceCavityIndex="10" volume="100" targetCavityIndex="26" status="Succeeded" />
+    <tips sourceCavityIndex="11" volume="100" targetCavityIndex="27" status="Succeeded" />
+    <tips sourceCavityIndex="12" volume="100" targetCavityIndex="28" status="Succeeded" />
+    <tips sourceCavityIndex="13" volume="100" targetCavityIndex="29" status="Succeeded" />
+    <tips sourceCavityIndex="14" volume="100" targetCavityIndex="30" status="Succeeded" />
+    <tips sourceCavityIndex="15" volume="100" targetCavityIndex="31" status="Succeeded" />
+  </jobs>
+  <jobs xsi:type="jobs:LiquidTransferJob" target="jobs:Microplate #//@labware.2" source="jobs:TubeRunner #//@labware.5" state="Succeeded" protocolStepName="AddSample" next="#//@jobs.12">
+    <tips volume="100" targetCavityIndex="32" status="Succeeded" />
+    <tips sourceCavityIndex="1" volume="100" targetCavityIndex="33" status="Succeeded" />
+    <tips sourceCavityIndex="2" volume="100" targetCavityIndex="34" status="Succeeded" />
+    <tips sourceCavityIndex="3" volume="100" targetCavityIndex="35" status="Succeeded" />
+    <tips sourceCavityIndex="4" volume="100" targetCavityIndex="36" status="Succeeded" />
+    <tips sourceCavityIndex="5" volume="100" targetCavityIndex="37" status="Succeeded" />
+    <tips sourceCavityIndex="6" volume="100" targetCavityIndex="38" status="Succeeded" />
+    <tips sourceCavityIndex="7" volume="100" targetCavityIndex="39" status="Succeeded" />
+  </jobs>
+  <jobs xsi:type="jobs:LiquidTransferJob" target="jobs:Microplate #//@labware.2" source="jobs:TubeRunner #//@labware.5" state="Succeeded" protocolStepName="AddSample" next="#//@jobs.12">
+    <tips sourceCavityIndex="8" volume="100" targetCavityIndex="40" status="Succeeded" />
+    <tips sourceCavityIndex="9" volume="100" targetCavityIndex="41" status="Succeeded" />
+    <tips sourceCavityIndex="10" volume="100" targetCavityIndex="42" status="Succeeded" />
+    <tips sourceCavityIndex="11" volume="100" targetCavityIndex="43" status="Succeeded" />
+    <tips sourceCavityIndex="12" volume="100" targetCavityIndex="44" status="Succeeded" />
+    <tips sourceCavityIndex="13" volume="100" targetCavityIndex="45" status="Succeeded" />
+    <tips sourceCavityIndex="14" volume="100" targetCavityIndex="46" status="Succeeded" />
+    <tips sourceCavityIndex="15" volume="100" targetCavityIndex="47" status="Succeeded" />
+  </jobs>
+  <jobs xsi:type="jobs:LiquidTransferJob" target="jobs:Microplate #//@labware.2" source="jobs:TubeRunner #//@labware.6" state="Failed" protocolStepName="AddSample" next="#//@jobs.12">
+    <tips volume="100" targetCavityIndex="48" status="Succeeded" />
+    <tips sourceCavityIndex="1" volume="100" targetCavityIndex="49" status="Succeeded" />
+    <tips sourceCavityIndex="2" volume="100" targetCavityIndex="50" status="Succeeded" />
+    <tips sourceCavityIndex="3" volume="100" targetCavityIndex="51" status="Succeeded" />
+    <tips sourceCavityIndex="4" volume="100" targetCavityIndex="52" status="Succeeded" />
+    <tips sourceCavityIndex="5" volume="100" targetCavityIndex="53" status="Succeeded" />
+    <tips sourceCavityIndex="6" volume="100" targetCavityIndex="54" status="Failed" />
+    <tips sourceCavityIndex="7" volume="100" targetCavityIndex="55" status="Succeeded" />
+  </jobs>
+  <jobs xsi:type="jobs:LiquidTransferJob" target="jobs:Microplate #//@labware.2" source="jobs:TubeRunner #//@labware.6" state="Succeeded" protocolStepName="AddSample" next="#//@jobs.12">
+    <tips sourceCavityIndex="8" volume="100" targetCavityIndex="56" status="Succeeded" />
+    <tips sourceCavityIndex="9" volume="100" targetCavityIndex="57" status="Succeeded" />
+    <tips sourceCavityIndex="10" volume="100" targetCavityIndex="58" status="Succeeded" />
+    <tips sourceCavityIndex="11" volume="100" targetCavityIndex="59" status="Succeeded" />
+    <tips sourceCavityIndex="12" volume="100" targetCavityIndex="60" status="Succeeded" />
+    <tips sourceCavityIndex="13" volume="100" targetCavityIndex="61" status="Succeeded" />
+    <tips sourceCavityIndex="14" volume="100" targetCavityIndex="62" status="Succeeded" />
+    <tips sourceCavityIndex="15" volume="100" targetCavityIndex="63" status="Succeeded" />
+  </jobs>
+  <jobs xsi:type="jobs:LiquidTransferJob" target="jobs:Microplate #//@labware.2" source="jobs:TubeRunner #//@labware.7" state="Succeeded" protocolStepName="AddSample" next="#//@jobs.12">
+    <tips volume="100" targetCavityIndex="64" status="Succeeded" />
+    <tips sourceCavityIndex="1" volume="100" targetCavityIndex="65" status="Succeeded" />
+    <tips sourceCavityIndex="2" volume="100" targetCavityIndex="66" status="Succeeded" />
+    <tips sourceCavityIndex="3" volume="100" targetCavityIndex="67" status="Succeeded" />
+    <tips sourceCavityIndex="4" volume="100" targetCavityIndex="68" status="Succeeded" />
+    <tips sourceCavityIndex="5" volume="100" targetCavityIndex="69" status="Succeeded" />
+    <tips sourceCavityIndex="6" volume="100" targetCavityIndex="70" status="Succeeded" />
+    <tips sourceCavityIndex="7" volume="100" targetCavityIndex="71" status="Succeeded" />
+  </jobs>
+  <jobs xsi:type="jobs:LiquidTransferJob" target="jobs:Microplate #//@labware.2" source="jobs:TubeRunner #//@labware.7" state="Failed" protocolStepName="AddSample" next="#//@jobs.12">
+    <tips sourceCavityIndex="8" volume="100" targetCavityIndex="72" status="Succeeded" />
+    <tips sourceCavityIndex="9" volume="100" targetCavityIndex="73" status="Succeeded" />
+    <tips sourceCavityIndex="10" volume="100" targetCavityIndex="74" status="Succeeded" />
+    <tips sourceCavityIndex="11" volume="100" targetCavityIndex="75" status="Succeeded" />
+    <tips sourceCavityIndex="12" volume="100" targetCavityIndex="76" status="Succeeded" />
+    <tips sourceCavityIndex="13" volume="100" targetCavityIndex="77" status="Succeeded" />
+    <tips sourceCavityIndex="14" volume="100" targetCavityIndex="78" status="Failed" />
+    <tips sourceCavityIndex="15" volume="100" targetCavityIndex="79" status="Succeeded" />
+  </jobs>
+  <jobs xsi:type="jobs:LiquidTransferJob" target="jobs:Microplate #//@labware.2" source="jobs:TubeRunner #//@labware.8" state="Succeeded" protocolStepName="AddSample" next="#//@jobs.12">
+    <tips volume="100" targetCavityIndex="80" status="Succeeded" />
+    <tips sourceCavityIndex="1" volume="100" targetCavityIndex="81" status="Succeeded" />
+    <tips sourceCavityIndex="2" volume="100" targetCavityIndex="82" status="Succeeded" />
+    <tips sourceCavityIndex="3" volume="100" targetCavityIndex="83" status="Succeeded" />
+    <tips sourceCavityIndex="4" volume="100" targetCavityIndex="84" status="Succeeded" />
+    <tips sourceCavityIndex="5" volume="100" targetCavityIndex="85" status="Succeeded" />
+    <tips sourceCavityIndex="6" volume="100" targetCavityIndex="86" status="Succeeded" />
+    <tips sourceCavityIndex="7" volume="100" targetCavityIndex="87" status="Succeeded" />
+  </jobs>
+  <jobs xsi:type="jobs:LiquidTransferJob" target="jobs:Microplate #//@labware.2" source="jobs:TubeRunner #//@labware.8" state="Succeeded" protocolStepName="AddSample" next="#//@jobs.12">
+    <tips sourceCavityIndex="8" volume="100" targetCavityIndex="88" status="Succeeded" />
+    <tips sourceCavityIndex="9" volume="100" targetCavityIndex="89" status="Succeeded" />
+    <tips sourceCavityIndex="10" volume="100" targetCavityIndex="90" status="Succeeded" />
+    <tips sourceCavityIndex="11" volume="100" targetCavityIndex="91" status="Succeeded" />
+    <tips sourceCavityIndex="12" volume="100" targetCavityIndex="92" status="Succeeded" />
+    <tips sourceCavityIndex="13" volume="100" targetCavityIndex="93" status="Succeeded" />
+    <tips sourceCavityIndex="14" volume="100" targetCavityIndex="94" status="Succeeded" />
+    <tips sourceCavityIndex="15" volume="100" targetCavityIndex="95" status="Succeeded" />
+  </jobs>
+  <jobs xsi:type="jobs:IncubateJob" temperature="310.15" duration="40" microplate="#//@labware.2" state="Succeeded" protocolStepName="BindAntibodies" previous="#//@jobs.0 #//@jobs.1 #//@jobs.2 #//@jobs.3 #//@jobs.4 #//@jobs.5 #//@jobs.6 #//@jobs.7 #//@jobs.8 #//@jobs.9 #//@jobs.10 #//@jobs.11" next="#//@jobs.13" />
+  <jobs xsi:type="jobs:WashJob" cavities="0 1 2 3 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 55 56 58 60 61 62 63 64 65 67 68 69 70 71 72 73 74 75 76 77 79 80 81 82 83 84 85 86 88 89 90 91 92 93 94 95" microplate="#//@labware.2" state="Succeeded" protocolStepName="WashAfterAntibodiesBound" previous="#//@jobs.12" next="#//@jobs.14 #//@jobs.15 #//@jobs.16 #//@jobs.17 #//@jobs.18 #//@jobs.19 #//@jobs.20 #//@jobs.21 #//@jobs.22 #//@jobs.23 #//@jobs.24 #//@jobs.25" />
+  <jobs xsi:type="jobs:LiquidTransferJob" target="jobs:Microplate #//@labware.2" source="jobs:Trough #//@labware.0" state="Failed" protocolStepName="AddConjugate" previous="#//@jobs.13" next="#//@jobs.26">
+    <tips volume="100" status="Succeeded" />
+    <tips volume="100" targetCavityIndex="1" status="Succeeded" />
+    <tips volume="100" targetCavityIndex="2" status="Succeeded" />
+    <tips volume="100" targetCavityIndex="3" status="Succeeded" />
+    <tips volume="100" targetCavityIndex="4" status="Failed" />
+    <tips volume="100" targetCavityIndex="5" status="Succeeded" />
+    <tips volume="100" targetCavityIndex="6" status="Succeeded" />
+    <tips volume="100" targetCavityIndex="7" status="Succeeded" />
+  </jobs>
+  <jobs xsi:type="jobs:LiquidTransferJob" target="jobs:Microplate #//@labware.2" source="jobs:Trough #//@labware.0" state="Succeeded" protocolStepName="AddConjugate" previous="#//@jobs.13" next="#//@jobs.26">
+    <tips volume="100" targetCavityIndex="8" status="Succeeded" />
+    <tips volume="100" targetCavityIndex="9" status="Succeeded" />
+    <tips volume="100" targetCavityIndex="10" status="Succeeded" />
+    <tips volume="100" targetCavityIndex="11" status="Succeeded" />
+    <tips volume="100" targetCavityIndex="12" status="Succeeded" />
+    <tips volume="100" targetCavityIndex="13" status="Succeeded" />
+    <tips volume="100" targetCavityIndex="14" status="Succeeded" />
+    <tips volume="100" targetCavityIndex="15" status="Succeeded" />
+  </jobs>
+  <jobs xsi:type="jobs:LiquidTransferJob" target="jobs:Microplate #//@labware.2" source="jobs:Trough #//@labware.0" state="Succeeded" protocolStepName="AddConjugate" previous="#//@jobs.13" next="#//@jobs.26">
+    <tips volume="100" targetCavityIndex="16" status="Succeeded" />
+    <tips volume="100" targetCavityIndex="17" status="Succeeded" />
+    <tips volume="100" targetCavityIndex="18" status="Succeeded" />
+    <tips volume="100" targetCavityIndex="19" status="Succeeded" />
+    <tips volume="100" targetCavityIndex="20" status="Succeeded" />
+    <tips volume="100" targetCavityIndex="21" status="Succeeded" />
+    <tips volume="100" targetCavityIndex="22" status="Succeeded" />
+    <tips volume="100" targetCavityIndex="23" status="Succeeded" />
+  </jobs>
+  <jobs xsi:type="jobs:LiquidTransferJob" target="jobs:Microplate #//@labware.2" source="jobs:Trough #//@labware.0" state="Failed" protocolStepName="AddConjugate" previous="#//@jobs.13" next="#//@jobs.26">
+    <tips volume="100" targetCavityIndex="24" status="Succeeded" />
+    <tips volume="100" targetCavityIndex="25" status="Succeeded" />
+    <tips volume="100" targetCavityIndex="26" status="Succeeded" />
+    <tips volume="100" targetCavityIndex="27" status="Failed" />
+    <tips volume="100" targetCavityIndex="28" status="Succeeded" />
+    <tips volume="100" targetCavityIndex="29" status="Succeeded" />
+    <tips volume="100" targetCavityIndex="30" status="Succeeded" />
+    <tips volume="100" targetCavityIndex="31" status="Succeeded" />
+  </jobs>
+  <jobs xsi:type="jobs:LiquidTransferJob" target="jobs:Microplate #//@labware.2" source="jobs:Trough #//@labware.0" state="Succeeded" protocolStepName="AddConjugate" previous="#//@jobs.13" next="#//@jobs.26">
+    <tips volume="100" targetCavityIndex="32" status="Succeeded" />
+    <tips volume="100" targetCavityIndex="33" status="Succeeded" />
+    <tips volume="100" targetCavityIndex="34" status="Succeeded" />
+    <tips volume="100" targetCavityIndex="35" status="Succeeded" />
+    <tips volume="100" targetCavityIndex="36" status="Succeeded" />
+    <tips volume="100" targetCavityIndex="37" status="Succeeded" />
+    <tips volume="100" targetCavityIndex="38" status="Succeeded" />
+    <tips volume="100" targetCavityIndex="39" status="Succeeded" />
+  </jobs>
+  <jobs xsi:type="jobs:LiquidTransferJob" target="jobs:Microplate #//@labware.2" source="jobs:Trough #//@labware.0" state="Succeeded" protocolStepName="AddConjugate" previous="#//@jobs.13" next="#//@jobs.26">
+    <tips volume="100" targetCavityIndex="40" status="Succeeded" />
+    <tips volume="100" targetCavityIndex="41" status="Succeeded" />
+    <tips volume="100" targetCavityIndex="42" status="Succeeded" />
+    <tips volume="100" targetCavityIndex="43" status="Succeeded" />
+    <tips volume="100" targetCavityIndex="44" status="Succeeded" />
+    <tips volume="100" targetCavityIndex="45" status="Succeeded" />
+    <tips volume="100" targetCavityIndex="46" status="Succeeded" />
+    <tips volume="100" targetCavityIndex="47" status="Succeeded" />
+  </jobs>
+  <jobs xsi:type="jobs:LiquidTransferJob" target="jobs:Microplate #//@labware.2" source="jobs:Trough #//@labware.0" state="Failed" protocolStepName="AddConjugate" previous="#//@jobs.13" next="#//@jobs.26">
+    <tips volume="100" targetCavityIndex="48" status="Succeeded" />
+    <tips volume="100" targetCavityIndex="49" status="Succeeded" />
+    <tips volume="100" targetCavityIndex="50" status="Succeeded" />
+    <tips volume="100" targetCavityIndex="51" status="Succeeded" />
+    <tips volume="100" targetCavityIndex="52" status="Succeeded" />
+    <tips volume="100" targetCavityIndex="53" status="Failed" />
+    <tips volume="100" targetCavityIndex="55" status="Succeeded" />
+  </jobs>
+  <jobs xsi:type="jobs:LiquidTransferJob" target="jobs:Microplate #//@labware.2" source="jobs:Trough #//@labware.0" state="Succeeded" protocolStepName="AddConjugate" previous="#//@jobs.13" next="#//@jobs.26">
+    <tips volume="100" targetCavityIndex="56" status="Succeeded" />
+    <tips volume="100" targetCavityIndex="57" status="Succeeded" />
+    <tips volume="100" targetCavityIndex="58" status="Succeeded" />
+    <tips volume="100" targetCavityIndex="59" status="Succeeded" />
+    <tips volume="100" targetCavityIndex="60" status="Succeeded" />
+    <tips volume="100" targetCavityIndex="61" status="Succeeded" />
+    <tips volume="100" targetCavityIndex="62" status="Succeeded" />
+    <tips volume="100" targetCavityIndex="63" status="Succeeded" />
+  </jobs>
+  <jobs xsi:type="jobs:LiquidTransferJob" target="jobs:Microplate #//@labware.2" source="jobs:Trough #//@labware.0" state="Succeeded" protocolStepName="AddConjugate" previous="#//@jobs.13" next="#//@jobs.26">
+    <tips volume="100" targetCavityIndex="64" status="Succeeded" />
+    <tips volume="100" targetCavityIndex="65" status="Succeeded" />
+    <tips volume="100" targetCavityIndex="66" status="Succeeded" />
+    <tips volume="100" targetCavityIndex="67" status="Succeeded" />
+    <tips volume="100" targetCavityIndex="68" status="Succeeded" />
+    <tips volume="100" targetCavityIndex="69" status="Succeeded" />
+    <tips volume="100" targetCavityIndex="70" status="Succeeded" />
+    <tips volume="100" targetCavityIndex="71" status="Succeeded" />
+  </jobs>
+  <jobs xsi:type="jobs:LiquidTransferJob" target="jobs:Microplate #//@labware.2" source="jobs:Trough #//@labware.0" state="Succeeded" protocolStepName="AddConjugate" previous="#//@jobs.13" next="#//@jobs.26">
+    <tips volume="100" targetCavityIndex="72" status="Succeeded" />
+    <tips volume="100" targetCavityIndex="73" status="Succeeded" />
+    <tips volume="100" targetCavityIndex="74" status="Succeeded" />
+    <tips volume="100" targetCavityIndex="75" status="Succeeded" />
+    <tips volume="100" targetCavityIndex="76" status="Succeeded" />
+    <tips volume="100" targetCavityIndex="77" status="Succeeded" />
+    <tips volume="100" targetCavityIndex="79" status="Succeeded" />
+  </jobs>
+  <jobs xsi:type="jobs:LiquidTransferJob" target="jobs:Microplate #//@labware.2" source="jobs:Trough #//@labware.0" state="Succeeded" protocolStepName="AddConjugate" previous="#//@jobs.13" next="#//@jobs.26">
+    <tips volume="100" targetCavityIndex="80" status="Succeeded" />
+    <tips volume="100" targetCavityIndex="81" status="Succeeded" />
+    <tips volume="100" targetCavityIndex="82" status="Succeeded" />
+    <tips volume="100" targetCavityIndex="83" status="Succeeded" />
+    <tips volume="100" targetCavityIndex="84" status="Succeeded" />
+    <tips volume="100" targetCavityIndex="85" status="Succeeded" />
+    <tips volume="100" targetCavityIndex="86" status="Succeeded" />
+    <tips volume="100" targetCavityIndex="87" status="Succeeded" />
+  </jobs>
+  <jobs xsi:type="jobs:LiquidTransferJob" target="jobs:Microplate #//@labware.2" source="jobs:Trough #//@labware.0" state="Succeeded" protocolStepName="AddConjugate" previous="#//@jobs.13" next="#//@jobs.26">
+    <tips volume="100" targetCavityIndex="88" status="Succeeded" />
+    <tips volume="100" targetCavityIndex="89" status="Succeeded" />
+    <tips volume="100" targetCavityIndex="90" status="Succeeded" />
+    <tips volume="100" targetCavityIndex="91" status="Succeeded" />
+    <tips volume="100" targetCavityIndex="92" status="Succeeded" />
+    <tips volume="100" targetCavityIndex="93" status="Succeeded" />
+    <tips volume="100" targetCavityIndex="94" status="Succeeded" />
+    <tips volume="100" targetCavityIndex="95" status="Succeeded" />
+  </jobs>
+  <jobs xsi:type="jobs:IncubateJob" temperature="310.15" duration="40" microplate="#//@labware.2" state="Succeeded" protocolStepName="BindConjugate" previous="#//@jobs.14 #//@jobs.15 #//@jobs.16 #//@jobs.17 #//@jobs.18 #//@jobs.19 #//@jobs.20 #//@jobs.21 #//@jobs.22 #//@jobs.23 #//@jobs.24 #//@jobs.25" next="#//@jobs.27" />
+  <jobs xsi:type="jobs:WashJob" cavities="0 1 2 3 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 55 56 58 60 61 62 63 64 65 67 68 69 70 71 72 73 74 75 76 77 79 80 81 82 83 84 85 86 88 89 90 91 92 93 94 95" microplate="#//@labware.2" state="Succeeded" protocolStepName="WashConjugate" previous="#//@jobs.26" next="#//@jobs.28 #//@jobs.29 #//@jobs.30 #//@jobs.31 #//@jobs.32 #//@jobs.33 #//@jobs.34 #//@jobs.35 #//@jobs.36 #//@jobs.37 #//@jobs.38 #//@jobs.39" />
+  <jobs xsi:type="jobs:LiquidTransferJob" target="jobs:Microplate #//@labware.2" source="jobs:Trough #//@labware.1" state="Succeeded" protocolStepName="AddSubstrate" previous="#//@jobs.27" next="#//@jobs.40">
+    <tips volume="100" status="Succeeded" />
+    <tips volume="100" targetCavityIndex="1" status="Succeeded" />
+    <tips volume="100" targetCavityIndex="2" status="Succeeded" />
+    <tips volume="100" targetCavityIndex="3" status="Succeeded" />
+    <tips volume="100" targetCavityIndex="5" status="Succeeded" />
+    <tips volume="100" targetCavityIndex="6" status="Succeeded" />
+    <tips volume="100" targetCavityIndex="7" status="Succeeded" />
+  </jobs>
+  <jobs xsi:type="jobs:LiquidTransferJob" target="jobs:Microplate #//@labware.2" source="jobs:Trough #//@labware.1" state="Succeeded" protocolStepName="AddSubstrate" previous="#//@jobs.27" next="#//@jobs.40">
+    <tips volume="100" targetCavityIndex="8" status="Succeeded" />
+    <tips volume="100" targetCavityIndex="9" status="Succeeded" />
+    <tips volume="100" targetCavityIndex="10" status="Succeeded" />
+    <tips volume="100" targetCavityIndex="11" status="Succeeded" />
+    <tips volume="100" targetCavityIndex="12" status="Succeeded" />
+    <tips volume="100" targetCavityIndex="13" status="Succeeded" />
+    <tips volume="100" targetCavityIndex="14" status="Succeeded" />
+    <tips volume="100" targetCavityIndex="15" status="Succeeded" />
+  </jobs>
+  <jobs xsi:type="jobs:LiquidTransferJob" target="jobs:Microplate #//@labware.2" source="jobs:Trough #//@labware.1" state="Succeeded" protocolStepName="AddSubstrate" previous="#//@jobs.27" next="#//@jobs.40">
+    <tips volume="100" targetCavityIndex="16" status="Succeeded" />
+    <tips volume="100" targetCavityIndex="17" status="Succeeded" />
+    <tips volume="100" targetCavityIndex="18" status="Succeeded" />
+    <tips volume="100" targetCavityIndex="19" status="Succeeded" />
+    <tips volume="100" targetCavityIndex="20" status="Succeeded" />
+    <tips volume="100" targetCavityIndex="21" status="Succeeded" />
+    <tips volume="100" targetCavityIndex="22" status="Succeeded" />
+    <tips volume="100" targetCavityIndex="23" status="Succeeded" />
+  </jobs>
+  <jobs xsi:type="jobs:LiquidTransferJob" target="jobs:Microplate #//@labware.2" source="jobs:Trough #//@labware.1" state="Succeeded" protocolStepName="AddSubstrate" previous="#//@jobs.27" next="#//@jobs.40">
+    <tips volume="100" targetCavityIndex="24" status="Succeeded" />
+    <tips volume="100" targetCavityIndex="25" status="Succeeded" />
+    <tips volume="100" targetCavityIndex="26" status="Succeeded" />
+    <tips volume="100" targetCavityIndex="28" status="Succeeded" />
+    <tips volume="100" targetCavityIndex="29" status="Succeeded" />
+    <tips volume="100" targetCavityIndex="30" status="Succeeded" />
+    <tips volume="100" targetCavityIndex="31" status="Succeeded" />
+  </jobs>
+  <jobs xsi:type="jobs:LiquidTransferJob" target="jobs:Microplate #//@labware.2" source="jobs:Trough #//@labware.1" state="Succeeded" protocolStepName="AddSubstrate" previous="#//@jobs.27" next="#//@jobs.40">
+    <tips volume="100" targetCavityIndex="32" status="Succeeded" />
+    <tips volume="100" targetCavityIndex="33" status="Succeeded" />
+    <tips volume="100" targetCavityIndex="34" status="Succeeded" />
+    <tips volume="100" targetCavityIndex="35" status="Succeeded" />
+    <tips volume="100" targetCavityIndex="36" status="Succeeded" />
+    <tips volume="100" targetCavityIndex="37" status="Succeeded" />
+    <tips volume="100" targetCavityIndex="38" status="Succeeded" />
+    <tips volume="100" targetCavityIndex="39" status="Succeeded" />
+  </jobs>
+  <jobs xsi:type="jobs:LiquidTransferJob" target="jobs:Microplate #//@labware.2" source="jobs:Trough #//@labware.1" state="Succeeded" protocolStepName="AddSubstrate" previous="#//@jobs.27" next="#//@jobs.40">
+    <tips volume="100" targetCavityIndex="40" status="Succeeded" />
+    <tips volume="100" targetCavityIndex="41" status="Succeeded" />
+    <tips volume="100" targetCavityIndex="42" status="Succeeded" />
+    <tips volume="100" targetCavityIndex="43" status="Succeeded" />
+    <tips volume="100" targetCavityIndex="44" status="Succeeded" />
+    <tips volume="100" targetCavityIndex="45" status="Succeeded" />
+    <tips volume="100" targetCavityIndex="46" status="Succeeded" />
+    <tips volume="100" targetCavityIndex="47" status="Succeeded" />
+  </jobs>
+  <jobs xsi:type="jobs:LiquidTransferJob" target="jobs:Microplate #//@labware.2" source="jobs:Trough #//@labware.1" state="Succeeded" protocolStepName="AddSubstrate" previous="#//@jobs.27" next="#//@jobs.40">
+    <tips volume="100" targetCavityIndex="48" status="Succeeded" />
+    <tips volume="100" targetCavityIndex="49" status="Succeeded" />
+    <tips volume="100" targetCavityIndex="50" status="Succeeded" />
+    <tips volume="100" targetCavityIndex="51" status="Succeeded" />
+    <tips volume="100" targetCavityIndex="52" status="Succeeded" />
+    <tips volume="100" targetCavityIndex="55" status="Succeeded" />
+  </jobs>
+  <jobs xsi:type="jobs:LiquidTransferJob" target="jobs:Microplate #//@labware.2" source="jobs:Trough #//@labware.1" state="Failed" protocolStepName="AddSubstrate" previous="#//@jobs.27" next="#//@jobs.40">
+    <tips volume="100" targetCavityIndex="56" status="Succeeded" />
+    <tips volume="100" targetCavityIndex="57" status="Failed" />
+    <tips volume="100" targetCavityIndex="58" status="Succeeded" />
+    <tips volume="100" targetCavityIndex="59" status="Failed" />
+    <tips volume="100" targetCavityIndex="60" status="Succeeded" />
+    <tips volume="100" targetCavityIndex="61" status="Succeeded" />
+    <tips volume="100" targetCavityIndex="62" status="Succeeded" />
+    <tips volume="100" targetCavityIndex="63" status="Succeeded" />
+  </jobs>
+  <jobs xsi:type="jobs:LiquidTransferJob" target="jobs:Microplate #//@labware.2" source="jobs:Trough #//@labware.1" state="Failed" protocolStepName="AddSubstrate" previous="#//@jobs.27" next="#//@jobs.40">
+    <tips volume="100" targetCavityIndex="64" status="Succeeded" />
+    <tips volume="100" targetCavityIndex="65" status="Succeeded" />
+    <tips volume="100" targetCavityIndex="66" status="Failed" />
+    <tips volume="100" targetCavityIndex="67" status="Succeeded" />
+    <tips volume="100" targetCavityIndex="68" status="Succeeded" />
+    <tips volume="100" targetCavityIndex="69" status="Succeeded" />
+    <tips volume="100" targetCavityIndex="70" status="Succeeded" />
+    <tips volume="100" targetCavityIndex="71" status="Succeeded" />
+  </jobs>
+  <jobs xsi:type="jobs:LiquidTransferJob" target="jobs:Microplate #//@labware.2" source="jobs:Trough #//@labware.1" state="Succeeded" protocolStepName="AddSubstrate" previous="#//@jobs.27" next="#//@jobs.40">
+    <tips volume="100" targetCavityIndex="72" status="Succeeded" />
+    <tips volume="100" targetCavityIndex="73" status="Succeeded" />
+    <tips volume="100" targetCavityIndex="74" status="Succeeded" />
+    <tips volume="100" targetCavityIndex="75" status="Succeeded" />
+    <tips volume="100" targetCavityIndex="76" status="Succeeded" />
+    <tips volume="100" targetCavityIndex="77" status="Succeeded" />
+    <tips volume="100" targetCavityIndex="79" status="Succeeded" />
+  </jobs>
+  <jobs xsi:type="jobs:LiquidTransferJob" target="jobs:Microplate #//@labware.2" source="jobs:Trough #//@labware.1" state="Failed" protocolStepName="AddSubstrate" previous="#//@jobs.27" next="#//@jobs.40">
+    <tips volume="100" targetCavityIndex="80" status="Succeeded" />
+    <tips volume="100" targetCavityIndex="81" status="Succeeded" />
+    <tips volume="100" targetCavityIndex="82" status="Succeeded" />
+    <tips volume="100" targetCavityIndex="83" status="Succeeded" />
+    <tips volume="100" targetCavityIndex="84" status="Succeeded" />
+    <tips volume="100" targetCavityIndex="85" status="Succeeded" />
+    <tips volume="100" targetCavityIndex="86" status="Succeeded" />
+    <tips volume="100" targetCavityIndex="87" status="Failed" />
+  </jobs>
+  <jobs xsi:type="jobs:LiquidTransferJob" target="jobs:Microplate #//@labware.2" source="jobs:Trough #//@labware.1" state="Succeeded" protocolStepName="AddSubstrate" previous="#//@jobs.27" next="#//@jobs.40">
+    <tips volume="100" targetCavityIndex="88" status="Succeeded" />
+    <tips volume="100" targetCavityIndex="89" status="Succeeded" />
+    <tips volume="100" targetCavityIndex="90" status="Succeeded" />
+    <tips volume="100" targetCavityIndex="91" status="Succeeded" />
+    <tips volume="100" targetCavityIndex="92" status="Succeeded" />
+    <tips volume="100" targetCavityIndex="93" status="Succeeded" />
+    <tips volume="100" targetCavityIndex="94" status="Succeeded" />
+    <tips volume="100" targetCavityIndex="95" status="Succeeded" />
+  </jobs>
+  <jobs xsi:type="jobs:IncubateJob" temperature="293.15" duration="20" microplate="#//@labware.2" state="Succeeded" protocolStepName="WaitForColorReaction" previous="#//@jobs.28 #//@jobs.29 #//@jobs.30 #//@jobs.31 #//@jobs.32 #//@jobs.33 #//@jobs.34 #//@jobs.35 #//@jobs.36 #//@jobs.37 #//@jobs.38 #//@jobs.39" />
+</jobs:JobCollection>

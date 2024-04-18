@@ -1,0 +1,181 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<jobs:JobCollection xmi:version="2.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xmi="http://www.omg.org/XMI" xmlns:jobs="http://www.transformation-tool-contest.eu/ttc21/jobCollection">
+  <labware xsi:type="jobs:Microplate" name="Plate01" />
+  <labware xsi:type="jobs:TubeRunner" barcodes="Sample0001 Sample0002 Sample0003 Sample0004 Sample0005 Sample0006 Sample0007 Sample0008 Sample0009 Sample0010 Sample0011 Sample0012 Sample0013 Sample0014 Sample0015 Sample0016" name="TubeRunner01" />
+  <labware xsi:type="jobs:Trough" name="Conjugate" />
+  <labware xsi:type="jobs:Trough" name="Substrate" />
+  <labware xsi:type="jobs:TubeRunner" barcodes="Sample0016 Sample0017 Sample0018 Sample0019 Sample0020 Sample0021 Sample0022 Sample0023" name="TubeRunner02" />
+  <jobs xsi:type="jobs:LiquidTransferJob" target="jobs:Microplate #//@labware.0" source="jobs:TubeRunner #//@labware.1" state="Failed" protocolStepName="AddSample" next="#//@jobs.2">
+    <tips volume="100" status="Succeeded" />
+    <tips sourceCavityIndex="1" volume="100" targetCavityIndex="1" status="Succeeded" />
+    <tips sourceCavityIndex="2" volume="100" targetCavityIndex="2" status="Failed" />
+    <tips sourceCavityIndex="3" volume="100" targetCavityIndex="3" status="Succeeded" />
+    <tips sourceCavityIndex="4" volume="100" targetCavityIndex="4" status="Succeeded" />
+    <tips sourceCavityIndex="5" volume="100" targetCavityIndex="5" status="Succeeded" />
+    <tips sourceCavityIndex="6" volume="100" targetCavityIndex="6" status="Succeeded" />
+    <tips sourceCavityIndex="7" volume="100" targetCavityIndex="7" status="Succeeded" />
+  </jobs>
+  <jobs xsi:type="jobs:LiquidTransferJob" target="jobs:Microplate #//@labware.0" source="jobs:TubeRunner #//@labware.1" state="Failed" protocolStepName="AddSample" next="#//@jobs.2">
+    <tips sourceCavityIndex="8" volume="100" targetCavityIndex="8" status="Succeeded" />
+    <tips sourceCavityIndex="9" volume="100" targetCavityIndex="9" status="Succeeded" />
+    <tips sourceCavityIndex="10" volume="100" targetCavityIndex="10" status="Succeeded" />
+    <tips sourceCavityIndex="11" volume="100" targetCavityIndex="11" status="Succeeded" />
+    <tips sourceCavityIndex="12" volume="100" targetCavityIndex="12" status="Failed" />
+    <tips sourceCavityIndex="13" volume="100" targetCavityIndex="13" status="Succeeded" />
+    <tips sourceCavityIndex="14" volume="100" targetCavityIndex="14" status="Succeeded" />
+    <tips sourceCavityIndex="15" volume="100" targetCavityIndex="15" status="Succeeded" />
+  </jobs>
+  <jobs xsi:type="jobs:IncubateJob" temperature="310.15" duration="40" microplate="#//@labware.0" state="Succeeded" protocolStepName="BindAntibodies" previous="#//@jobs.0 #//@jobs.1" next="#//@jobs.3" />
+  <jobs xsi:type="jobs:WashJob" cavities="0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15" microplate="#//@labware.0" state="Succeeded" protocolStepName="WashAfterAntibodiesBound" previous="#//@jobs.2" next="#//@jobs.4 #//@jobs.5" />
+  <jobs xsi:type="jobs:LiquidTransferJob" target="jobs:Microplate #//@labware.0" source="jobs:Trough #//@labware.2" state="Succeeded" protocolStepName="AddConjugate" previous="#//@jobs.3" next="#//@jobs.6">
+    <tips volume="100" status="Succeeded" />
+    <tips volume="100" targetCavityIndex="1" status="Succeeded" />
+    <tips volume="100" targetCavityIndex="3" status="Succeeded" />
+    <tips volume="100" targetCavityIndex="4" status="Succeeded" />
+    <tips volume="100" targetCavityIndex="5" status="Succeeded" />
+    <tips volume="100" targetCavityIndex="6" status="Succeeded" />
+    <tips volume="100" targetCavityIndex="7" status="Succeeded" />
+  </jobs>
+  <jobs xsi:type="jobs:LiquidTransferJob" target="jobs:Microplate #//@labware.0" source="jobs:Trough #//@labware.2" state="Succeeded" protocolStepName="AddConjugate" previous="#//@jobs.3" next="#//@jobs.6">
+    <tips volume="100" targetCavityIndex="8" status="Succeeded" />
+    <tips volume="100" targetCavityIndex="9" status="Succeeded" />
+    <tips volume="100" targetCavityIndex="10" status="Succeeded" />
+    <tips volume="100" targetCavityIndex="11" status="Succeeded" />
+    <tips volume="100" targetCavityIndex="13" status="Succeeded" />
+    <tips volume="100" targetCavityIndex="14" status="Succeeded" />
+    <tips volume="100" targetCavityIndex="15" status="Succeeded" />
+  </jobs>
+  <jobs xsi:type="jobs:IncubateJob" temperature="310.15" duration="40" microplate="#//@labware.0" state="Succeeded" protocolStepName="BindConjugate" previous="#//@jobs.4 #//@jobs.5" next="#//@jobs.7" />
+  <jobs xsi:type="jobs:WashJob" cavities="0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15" microplate="#//@labware.0" state="Succeeded" protocolStepName="WashConjugate" previous="#//@jobs.6" next="#//@jobs.8 #//@jobs.9" />
+  <jobs xsi:type="jobs:LiquidTransferJob" target="jobs:Microplate #//@labware.0" source="jobs:Trough #//@labware.3" state="Succeeded" protocolStepName="AddSubstrate" previous="#//@jobs.7" next="#//@jobs.10">
+    <tips volume="100" status="Succeeded" />
+    <tips volume="100" targetCavityIndex="1" status="Succeeded" />
+    <tips volume="100" targetCavityIndex="3" status="Succeeded" />
+    <tips volume="100" targetCavityIndex="4" status="Succeeded" />
+    <tips volume="100" targetCavityIndex="5" status="Succeeded" />
+    <tips volume="100" targetCavityIndex="6" status="Succeeded" />
+    <tips volume="100" targetCavityIndex="7" status="Succeeded" />
+  </jobs>
+  <jobs xsi:type="jobs:LiquidTransferJob" target="jobs:Microplate #//@labware.0" source="jobs:Trough #//@labware.3" state="Failed" protocolStepName="AddSubstrate" previous="#//@jobs.7" next="#//@jobs.10">
+    <tips volume="100" targetCavityIndex="8" status="Succeeded" />
+    <tips volume="100" targetCavityIndex="9" status="Succeeded" />
+    <tips volume="100" targetCavityIndex="10" status="Succeeded" />
+    <tips volume="100" targetCavityIndex="11" status="Succeeded" />
+    <tips volume="100" targetCavityIndex="13" status="Succeeded" />
+    <tips volume="100" targetCavityIndex="14" status="Succeeded" />
+    <tips volume="100" targetCavityIndex="15" status="Failed" />
+  </jobs>
+  <jobs xsi:type="jobs:IncubateJob" temperature="293.15" duration="20" microplate="#//@labware.0" state="Succeeded" protocolStepName="WaitForColorReaction" previous="#//@jobs.8 #//@jobs.9" />
+  <jobs xsi:type="jobs:LiquidTransferJob" target="jobs:Microplate #//@labware.0" source="jobs:TubeRunner #//@labware.4" protocolStepName="AddSample" next="#//@jobs.12">
+    <tips volume="100" targetCavityIndex="16" />
+  </jobs>
+  <jobs xsi:type="jobs:IncubateJob" temperature="310.15" duration="40" microplate="#//@labware.0" state="Succeeded" protocolStepName="BindAntibodies" previous="#//@jobs.11" next="#//@jobs.13" />
+  <jobs xsi:type="jobs:WashJob" cavities="16" microplate="#//@labware.0" state="Succeeded" protocolStepName="WashAfterAntibodiesBound" previous="#//@jobs.12" next="#//@jobs.14" />
+  <jobs xsi:type="jobs:LiquidTransferJob" target="jobs:Microplate #//@labware.0" source="jobs:Trough #//@labware.2" state="Succeeded" protocolStepName="AddConjugate" previous="#//@jobs.13" next="#//@jobs.15">
+    <tips volume="100" targetCavityIndex="16" status="Succeeded" />
+  </jobs>
+  <jobs xsi:type="jobs:IncubateJob" temperature="310.15" duration="40" microplate="#//@labware.0" state="Succeeded" protocolStepName="BindConjugate" previous="#//@jobs.14" next="#//@jobs.16" />
+  <jobs xsi:type="jobs:WashJob" cavities="16" microplate="#//@labware.0" state="Succeeded" protocolStepName="WashConjugate" previous="#//@jobs.15" next="#//@jobs.17" />
+  <jobs xsi:type="jobs:LiquidTransferJob" target="jobs:Microplate #//@labware.0" source="jobs:Trough #//@labware.3" state="Succeeded" protocolStepName="AddSubstrate" previous="#//@jobs.16" next="#//@jobs.18">
+    <tips volume="100" targetCavityIndex="16" status="Succeeded" />
+  </jobs>
+  <jobs xsi:type="jobs:IncubateJob" temperature="293.15" duration="20" microplate="#//@labware.0" state="Succeeded" protocolStepName="WaitForColorReaction" previous="#//@jobs.17" />
+  <jobs xsi:type="jobs:LiquidTransferJob" target="jobs:Microplate #//@labware.0" source="jobs:TubeRunner #//@labware.4" protocolStepName="AddSample" next="#//@jobs.20">
+    <tips sourceCavityIndex="1" volume="100" targetCavityIndex="17" />
+  </jobs>
+  <jobs xsi:type="jobs:IncubateJob" temperature="310.15" duration="40" microplate="#//@labware.0" protocolStepName="BindAntibodies" previous="#//@jobs.19" next="#//@jobs.21" />
+  <jobs xsi:type="jobs:WashJob" cavities="17" microplate="#//@labware.0" state="Succeeded" protocolStepName="WashAfterAntibodiesBound" previous="#//@jobs.20" next="#//@jobs.22" />
+  <jobs xsi:type="jobs:LiquidTransferJob" target="jobs:Microplate #//@labware.0" source="jobs:Trough #//@labware.2" state="Succeeded" protocolStepName="AddConjugate" previous="#//@jobs.21" next="#//@jobs.23">
+    <tips volume="100" targetCavityIndex="17" status="Succeeded" />
+  </jobs>
+  <jobs xsi:type="jobs:IncubateJob" temperature="310.15" duration="40" microplate="#//@labware.0" state="Succeeded" protocolStepName="BindConjugate" previous="#//@jobs.22" next="#//@jobs.24" />
+  <jobs xsi:type="jobs:WashJob" cavities="17" microplate="#//@labware.0" state="Succeeded" protocolStepName="WashConjugate" previous="#//@jobs.23" next="#//@jobs.25" />
+  <jobs xsi:type="jobs:LiquidTransferJob" target="jobs:Microplate #//@labware.0" source="jobs:Trough #//@labware.3" state="Succeeded" protocolStepName="AddSubstrate" previous="#//@jobs.24" next="#//@jobs.26">
+    <tips volume="100" targetCavityIndex="17" status="Succeeded" />
+  </jobs>
+  <jobs xsi:type="jobs:IncubateJob" temperature="293.15" duration="20" microplate="#//@labware.0" state="Succeeded" protocolStepName="WaitForColorReaction" previous="#//@jobs.25" />
+  <jobs xsi:type="jobs:LiquidTransferJob" target="jobs:Microplate #//@labware.0" source="jobs:TubeRunner #//@labware.4" protocolStepName="AddSample" next="#//@jobs.28">
+    <tips sourceCavityIndex="2" volume="100" targetCavityIndex="18" />
+  </jobs>
+  <jobs xsi:type="jobs:IncubateJob" temperature="310.15" duration="40" microplate="#//@labware.0" protocolStepName="BindAntibodies" previous="#//@jobs.27" next="#//@jobs.29" />
+  <jobs xsi:type="jobs:WashJob" cavities="18" microplate="#//@labware.0" protocolStepName="WashAfterAntibodiesBound" previous="#//@jobs.28" next="#//@jobs.30" />
+  <jobs xsi:type="jobs:LiquidTransferJob" target="jobs:Microplate #//@labware.0" source="jobs:Trough #//@labware.2" state="Succeeded" protocolStepName="AddConjugate" previous="#//@jobs.29" next="#//@jobs.31">
+    <tips volume="100" targetCavityIndex="18" status="Succeeded" />
+  </jobs>
+  <jobs xsi:type="jobs:IncubateJob" temperature="310.15" duration="40" microplate="#//@labware.0" state="Succeeded" protocolStepName="BindConjugate" previous="#//@jobs.30" next="#//@jobs.32" />
+  <jobs xsi:type="jobs:WashJob" cavities="18" microplate="#//@labware.0" state="Succeeded" protocolStepName="WashConjugate" previous="#//@jobs.31" next="#//@jobs.33" />
+  <jobs xsi:type="jobs:LiquidTransferJob" target="jobs:Microplate #//@labware.0" source="jobs:Trough #//@labware.3" state="Succeeded" protocolStepName="AddSubstrate" previous="#//@jobs.32" next="#//@jobs.34">
+    <tips volume="100" targetCavityIndex="18" status="Succeeded" />
+  </jobs>
+  <jobs xsi:type="jobs:IncubateJob" temperature="293.15" duration="20" microplate="#//@labware.0" state="Succeeded" protocolStepName="WaitForColorReaction" previous="#//@jobs.33" />
+  <jobs xsi:type="jobs:LiquidTransferJob" target="jobs:Microplate #//@labware.0" source="jobs:TubeRunner #//@labware.4" protocolStepName="AddSample" next="#//@jobs.36">
+    <tips sourceCavityIndex="3" volume="100" targetCavityIndex="19" />
+  </jobs>
+  <jobs xsi:type="jobs:IncubateJob" temperature="310.15" duration="40" microplate="#//@labware.0" protocolStepName="BindAntibodies" previous="#//@jobs.35" next="#//@jobs.37" />
+  <jobs xsi:type="jobs:WashJob" cavities="19" microplate="#//@labware.0" protocolStepName="WashAfterAntibodiesBound" previous="#//@jobs.36" next="#//@jobs.38" />
+  <jobs xsi:type="jobs:LiquidTransferJob" target="jobs:Microplate #//@labware.0" source="jobs:Trough #//@labware.2" protocolStepName="AddConjugate" previous="#//@jobs.37" next="#//@jobs.39">
+    <tips volume="100" targetCavityIndex="19" />
+  </jobs>
+  <jobs xsi:type="jobs:IncubateJob" temperature="310.15" duration="40" microplate="#//@labware.0" state="Succeeded" protocolStepName="BindConjugate" previous="#//@jobs.38" next="#//@jobs.40" />
+  <jobs xsi:type="jobs:WashJob" cavities="19" microplate="#//@labware.0" state="Succeeded" protocolStepName="WashConjugate" previous="#//@jobs.39" next="#//@jobs.41" />
+  <jobs xsi:type="jobs:LiquidTransferJob" target="jobs:Microplate #//@labware.0" source="jobs:Trough #//@labware.3" state="Succeeded" protocolStepName="AddSubstrate" previous="#//@jobs.40" next="#//@jobs.42">
+    <tips volume="100" targetCavityIndex="19" status="Succeeded" />
+  </jobs>
+  <jobs xsi:type="jobs:IncubateJob" temperature="293.15" duration="20" microplate="#//@labware.0" state="Succeeded" protocolStepName="WaitForColorReaction" previous="#//@jobs.41" />
+  <jobs xsi:type="jobs:LiquidTransferJob" target="jobs:Microplate #//@labware.0" source="jobs:TubeRunner #//@labware.4" protocolStepName="AddSample" next="#//@jobs.44">
+    <tips sourceCavityIndex="4" volume="100" targetCavityIndex="20" />
+  </jobs>
+  <jobs xsi:type="jobs:IncubateJob" temperature="310.15" duration="40" microplate="#//@labware.0" protocolStepName="BindAntibodies" previous="#//@jobs.43" next="#//@jobs.45" />
+  <jobs xsi:type="jobs:WashJob" cavities="20" microplate="#//@labware.0" protocolStepName="WashAfterAntibodiesBound" previous="#//@jobs.44" next="#//@jobs.46" />
+  <jobs xsi:type="jobs:LiquidTransferJob" target="jobs:Microplate #//@labware.0" source="jobs:Trough #//@labware.2" protocolStepName="AddConjugate" previous="#//@jobs.45" next="#//@jobs.47">
+    <tips volume="100" targetCavityIndex="20" />
+  </jobs>
+  <jobs xsi:type="jobs:IncubateJob" temperature="310.15" duration="40" microplate="#//@labware.0" protocolStepName="BindConjugate" previous="#//@jobs.46" next="#//@jobs.48" />
+  <jobs xsi:type="jobs:WashJob" cavities="20" microplate="#//@labware.0" state="Succeeded" protocolStepName="WashConjugate" previous="#//@jobs.47" next="#//@jobs.49" />
+  <jobs xsi:type="jobs:LiquidTransferJob" target="jobs:Microplate #//@labware.0" source="jobs:Trough #//@labware.3" state="Succeeded" protocolStepName="AddSubstrate" previous="#//@jobs.48" next="#//@jobs.50">
+    <tips volume="100" targetCavityIndex="20" status="Succeeded" />
+  </jobs>
+  <jobs xsi:type="jobs:IncubateJob" temperature="293.15" duration="20" microplate="#//@labware.0" state="Succeeded" protocolStepName="WaitForColorReaction" previous="#//@jobs.49" />
+  <jobs xsi:type="jobs:LiquidTransferJob" target="jobs:Microplate #//@labware.0" source="jobs:TubeRunner #//@labware.4" protocolStepName="AddSample" next="#//@jobs.52">
+    <tips sourceCavityIndex="5" volume="100" targetCavityIndex="21" />
+  </jobs>
+  <jobs xsi:type="jobs:IncubateJob" temperature="310.15" duration="40" microplate="#//@labware.0" protocolStepName="BindAntibodies" previous="#//@jobs.51" next="#//@jobs.53" />
+  <jobs xsi:type="jobs:WashJob" cavities="21" microplate="#//@labware.0" protocolStepName="WashAfterAntibodiesBound" previous="#//@jobs.52" next="#//@jobs.54" />
+  <jobs xsi:type="jobs:LiquidTransferJob" target="jobs:Microplate #//@labware.0" source="jobs:Trough #//@labware.2" protocolStepName="AddConjugate" previous="#//@jobs.53" next="#//@jobs.55">
+    <tips volume="100" targetCavityIndex="21" />
+  </jobs>
+  <jobs xsi:type="jobs:IncubateJob" temperature="310.15" duration="40" microplate="#//@labware.0" protocolStepName="BindConjugate" previous="#//@jobs.54" next="#//@jobs.56" />
+  <jobs xsi:type="jobs:WashJob" cavities="21" microplate="#//@labware.0" protocolStepName="WashConjugate" previous="#//@jobs.55" next="#//@jobs.57" />
+  <jobs xsi:type="jobs:LiquidTransferJob" target="jobs:Microplate #//@labware.0" source="jobs:Trough #//@labware.3" state="Succeeded" protocolStepName="AddSubstrate" previous="#//@jobs.56" next="#//@jobs.58">
+    <tips volume="100" targetCavityIndex="21" status="Succeeded" />
+  </jobs>
+  <jobs xsi:type="jobs:IncubateJob" temperature="293.15" duration="20" microplate="#//@labware.0" state="Succeeded" protocolStepName="WaitForColorReaction" previous="#//@jobs.57" />
+  <jobs xsi:type="jobs:LiquidTransferJob" target="jobs:Microplate #//@labware.0" source="jobs:TubeRunner #//@labware.4" protocolStepName="AddSample" next="#//@jobs.60">
+    <tips sourceCavityIndex="6" volume="100" targetCavityIndex="22" />
+  </jobs>
+  <jobs xsi:type="jobs:IncubateJob" temperature="310.15" duration="40" microplate="#//@labware.0" protocolStepName="BindAntibodies" previous="#//@jobs.59" next="#//@jobs.61" />
+  <jobs xsi:type="jobs:WashJob" cavities="22" microplate="#//@labware.0" protocolStepName="WashAfterAntibodiesBound" previous="#//@jobs.60" next="#//@jobs.62" />
+  <jobs xsi:type="jobs:LiquidTransferJob" target="jobs:Microplate #//@labware.0" source="jobs:Trough #//@labware.2" protocolStepName="AddConjugate" previous="#//@jobs.61" next="#//@jobs.63">
+    <tips volume="100" targetCavityIndex="22" />
+  </jobs>
+  <jobs xsi:type="jobs:IncubateJob" temperature="310.15" duration="40" microplate="#//@labware.0" protocolStepName="BindConjugate" previous="#//@jobs.62" next="#//@jobs.64" />
+  <jobs xsi:type="jobs:WashJob" cavities="22" microplate="#//@labware.0" protocolStepName="WashConjugate" previous="#//@jobs.63" next="#//@jobs.65" />
+  <jobs xsi:type="jobs:LiquidTransferJob" target="jobs:Microplate #//@labware.0" source="jobs:Trough #//@labware.3" protocolStepName="AddSubstrate" previous="#//@jobs.64" next="#//@jobs.66">
+    <tips volume="100" targetCavityIndex="22" />
+  </jobs>
+  <jobs xsi:type="jobs:IncubateJob" temperature="293.15" duration="20" microplate="#//@labware.0" state="Succeeded" protocolStepName="WaitForColorReaction" previous="#//@jobs.65" />
+  <jobs xsi:type="jobs:LiquidTransferJob" target="jobs:Microplate #//@labware.0" source="jobs:TubeRunner #//@labware.4" protocolStepName="AddSample" next="#//@jobs.68">
+    <tips sourceCavityIndex="7" volume="100" targetCavityIndex="23" />
+  </jobs>
+  <jobs xsi:type="jobs:IncubateJob" temperature="310.15" duration="40" microplate="#//@labware.0" protocolStepName="BindAntibodies" previous="#//@jobs.67" next="#//@jobs.69" />
+  <jobs xsi:type="jobs:WashJob" cavities="23" microplate="#//@labware.0" protocolStepName="WashAfterAntibodiesBound" previous="#//@jobs.68" next="#//@jobs.70" />
+  <jobs xsi:type="jobs:LiquidTransferJob" target="jobs:Microplate #//@labware.0" source="jobs:Trough #//@labware.2" protocolStepName="AddConjugate" previous="#//@jobs.69" next="#//@jobs.71">
+    <tips volume="100" targetCavityIndex="23" />
+  </jobs>
+  <jobs xsi:type="jobs:IncubateJob" temperature="310.15" duration="40" microplate="#//@labware.0" protocolStepName="BindConjugate" previous="#//@jobs.70" next="#//@jobs.72" />
+  <jobs xsi:type="jobs:WashJob" cavities="23" microplate="#//@labware.0" protocolStepName="WashConjugate" previous="#//@jobs.71" next="#//@jobs.73" />
+  <jobs xsi:type="jobs:LiquidTransferJob" target="jobs:Microplate #//@labware.0" source="jobs:Trough #//@labware.3" protocolStepName="AddSubstrate" previous="#//@jobs.72" next="#//@jobs.74">
+    <tips volume="100" targetCavityIndex="23" />
+  </jobs>
+  <jobs xsi:type="jobs:IncubateJob" temperature="293.15" duration="20" microplate="#//@labware.0" protocolStepName="WaitForColorReaction" previous="#//@jobs.73" />
+</jobs:JobCollection>
